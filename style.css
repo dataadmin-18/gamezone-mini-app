@@ -1,0 +1,427 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #0b0f19;
+    color: #ffffff;
+}
+
+button {
+    font-family: inherit;
+}
+
+.app {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    min-height: 100vh;
+    padding-bottom: 90px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 18px 12px;
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.welcome {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+#username {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.profile-button {
+    width: 44px;
+    height: 44px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #1b2233;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   BALANCE
+========================= */
+
+.balance-card {
+    margin: 10px 16px 24px;
+
+    padding: 22px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #171e31,
+            #101522
+        );
+
+    border: 1px solid #252e43;
+}
+
+.balance-label {
+    font-size: 11px;
+    color: #8f9bb0;
+    letter-spacing: 1px;
+}
+
+.balance {
+    margin-top: 6px;
+
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.coin {
+    font-size: 24px;
+}
+
+.balance-button {
+    margin-top: 14px;
+
+    border: 0;
+    border-radius: 10px;
+
+    padding: 10px 14px;
+
+    background: #27324a;
+    color: white;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+    padding: 0 18px 12px;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   GAME GRID
+========================= */
+
+.games {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    padding: 0 16px;
+}
+
+.game-card {
+    min-height: 155px;
+
+    border: 1px solid #252e43;
+
+    border-radius: 18px;
+
+    text-align: left;
+
+    padding: 18px;
+
+    color: white;
+
+    background: #141a28;
+
+    transition: transform 0.15s;
+}
+
+.game-card:active {
+    transform: scale(0.96);
+}
+
+.game-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.game-name {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.game-description {
+    margin-top: 5px;
+
+    font-size: 12px;
+
+    color: #8f9bb0;
+}
+
+
+/* =========================
+   DIFFERENT GAME CARDS
+========================= */
+
+.slots {
+    background:
+        linear-gradient(
+            145deg,
+            #26152c,
+            #151622
+        );
+}
+
+.mines {
+    background:
+        linear-gradient(
+            145deg,
+            #292016,
+            #151622
+        );
+}
+
+.keno {
+    background:
+        linear-gradient(
+            145deg,
+            #14282b,
+            #151622
+        );
+}
+
+.bingo {
+    background:
+        linear-gradient(
+            145deg,
+            #21172e,
+            #151622
+        );
+}
+
+.wheel {
+    background:
+        linear-gradient(
+            145deg,
+            #2a2114,
+            #151622
+        );
+}
+
+.aviator {
+    background:
+        linear-gradient(
+            145deg,
+            #142436,
+            #151622
+        );
+}
+
+
+/* =========================
+   BOTTOM NAV
+========================= */
+
+.bottom-nav {
+    position: fixed;
+
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+    max-width: 600px;
+
+    height: 70px;
+
+    display: flex;
+
+    justify-content: space-around;
+    align-items: center;
+
+    background: #111725;
+
+    border-top: 1px solid #252e43;
+
+    z-index: 100;
+}
+
+.nav-button {
+    border: 0;
+    background: transparent;
+
+    color: #7f8ba1;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 4px;
+
+    padding: 8px 18px;
+}
+
+.nav-button span {
+    font-size: 20px;
+}
+
+.nav-button small {
+    font-size: 10px;
+}
+
+.nav-button.active {
+    color: white;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(
+        0,
+        0,
+        0,
+        0.75
+    );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 200;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 400px;
+
+    background: #151b2a;
+
+    border: 1px solid #29334a;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    width: 35px;
+    height: 35px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #252e43;
+    color: white;
+}
+
+.modal-icon {
+    font-size: 60px;
+
+    margin-bottom: 12px;
+}
+
+.modal-content h2 {
+    font-size: 25px;
+}
+
+.modal-content p {
+    color: #929db1;
+
+    margin: 10px 0 25px;
+}
+
+.play-button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 0;
+    border-radius: 12px;
+
+    background: #ffffff;
+    color: #111827;
+
+    font-size: 16px;
+    font-weight: 800;
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 360px) {
+
+    .games {
+        gap: 8px;
+        padding: 0 10px;
+    }
+
+    .game-card {
+        padding: 14px;
+        min-height: 140px;
+    }
+
+    .game-icon {
+        font-size: 32px;
+    }
+
+}

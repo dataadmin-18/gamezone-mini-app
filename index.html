@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width,
+        initial-scale=1.0,
+        maximum-scale=1.0,
+        user-scalable=no"
+    >
+
+    <title>Game Zone</title>
+
+    <!-- Telegram Mini App SDK -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- HEADER -->
+        <header class="topbar">
+
+            <div>
+                <div class="brand">
+                    GAME ZONE
+                </div>
+
+                <div class="welcome">
+                    Welcome,
+                    <span id="username">
+                        Player
+                    </span>
+                </div>
+            </div>
+
+            <button
+                class="profile-button"
+                onclick="showProfile()"
+            >
+                👤
+            </button>
+
+        </header>
+
+
+        <!-- BALANCE -->
+        <section class="balance-card">
+
+            <div class="balance-label">
+                DEMO BALANCE
+            </div>
+
+            <div class="balance">
+                <span id="balance">
+                    10,000
+                </span>
+                <span class="coin">
+                    🪙
+                </span>
+            </div>
+
+            <button
+                class="balance-button"
+                onclick="showDemoBalance()"
+            >
+                + Demo Coins
+            </button>
+
+        </section>
+
+
+        <!-- TITLE -->
+        <div class="section-title">
+            Games
+        </div>
+
+
+        <!-- GAMES -->
+        <main class="games">
+
+            <!-- SLOTS -->
+            <button
+                class="game-card slots"
+                onclick="openGame('slots')"
+            >
+
+                <div class="game-icon">
+                    🎰
+                </div>
+
+                <div class="game-name">
+                    Slots
+                </div>
+
+                <div class="game-description">
+                    Spin the reels
+                </div>
+
+            </button>
+
+
+            <!-- MINES -->
+            <button
+                class="game-card mines"
+                onclick="openGame('mines')"
+            >
+
+                <div class="game-icon">
+                    💣
+                </div>
+
+                <div class="game-name">
+                    Mines
+                </div>
+
+                <div class="game-description">
+                    Find safe tiles
+                </div>
+
+            </button>
+
+
+            <!-- KENO -->
+            <button
+                class="game-card keno"
+                onclick="openGame('keno')"
+            >
+
+                <div class="game-icon">
+                    🎯
+                </div>
+
+                <div class="game-name">
+                    Keno
+                </div>
+
+                <div class="game-description">
+                    Pick your numbers
+                </div>
+
+            </button>
+
+
+            <!-- BINGO -->
+            <button
+                class="game-card bingo"
+                onclick="openGame('bingo')"
+            >
+
+                <div class="game-icon">
+                    🎱
+                </div>
+
+                <div class="game-name">
+                    Bingo
+                </div>
+
+                <div class="game-description">
+                    Match the numbers
+                </div>
+
+            </button>
+
+
+            <!-- WHEEL -->
+            <button
+                class="game-card wheel"
+                onclick="openGame('wheel')"
+            >
+
+                <div class="game-icon">
+                    🎡
+                </div>
+
+                <div class="game-name">
+                    Wheel
+                </div>
+
+                <div class="game-description">
+                    Spin the wheel
+                </div>
+
+            </button>
+
+
+            <!-- AVIATOR -->
+            <button
+                class="game-card aviator"
+                onclick="openGame('aviator')"
+            >
+
+                <div class="game-icon">
+                    ✈️
+                </div>
+
+                <div class="game-name">
+                    Aviator
+                </div>
+
+                <div class="game-description">
+                    Demo flight game
+                </div>
+
+            </button>
+
+        </main>
+
+
+        <!-- BOTTOM NAVIGATION -->
+        <nav class="bottom-nav">
+
+            <button
+                class="nav-button active"
+                onclick="showHome()"
+            >
+                <span>🏠</span>
+                <small>Home</small>
+            </button>
+
+            <button
+                class="nav-button"
+                onclick="showGames()"
+            >
+                <span>🎮</span>
+                <small>Games</small>
+            </button>
+
+            <button
+                class="nav-button"
+                onclick="showHistory()"
+            >
+                <span>📜</span>
+                <small>History</small>
+            </button>
+
+            <button
+                class="nav-button"
+                onclick="showProfile()"
+            >
+                <span>👤</span>
+                <small>Profile</small>
+            </button>
+
+        </nav>
+
+    </div>
+
+
+    <!-- GAME MODAL -->
+    <div
+        id="gameModal"
+        class="modal hidden"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="close-button"
+                onclick="closeGame()"
+            >
+                ✕
+            </button>
+
+            <div
+                id="gameIcon"
+                class="modal-icon"
+            >
+                🎮
+            </div>
+
+            <h2 id="gameTitle">
+                Game
+            </h2>
+
+            <p id="gameText">
+                Loading...
+            </p>
+
+            <button
+                class="play-button"
+                onclick="startDemoGame()"
+            >
+                PLAY DEMO
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>
