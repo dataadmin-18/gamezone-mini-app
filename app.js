@@ -103,8 +103,32 @@ async function loadUser() {
         }
 
 
-        const data =
-            await response.json();
+        const responseText =
+    await response.text();
+
+console.log(
+    "Slots raw server response:",
+    responseText
+);
+
+let data;
+
+try {
+
+    data =
+        JSON.parse(responseText);
+
+} catch (jsonError) {
+
+    console.error(
+        "Slots returned invalid JSON:",
+        jsonError
+    );
+
+    throw new Error(
+        "Server returned an invalid response. Check Render logs."
+    );
+}
 
 
         console.log(
