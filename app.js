@@ -11,7 +11,7 @@ const tg = window.Telegram.WebApp;
 // ==========================================
 
 const API_URL =
-    "https://gamezone-backend-9qek.onrender.com";
+    "https://gamezone-backend-1-luwe.onrender.com";
 
 
 // ==========================================
