@@ -179,6 +179,13 @@ function openGame(game) {
         return;
     }
 
+    if (game === "mines") {
+
+    openMines();
+
+    return;
+    }
+
 
     const modal =
         document.getElementById(
@@ -442,6 +449,476 @@ function openSlots() {
     window.selectedSlotsBet =
         10;
 }
+
+
+
+
+// ==========================================
+// MINES INTERFACE
+// ==========================================
+
+function openMines() {
+
+    const modal =
+        document.getElementById(
+            "gameModal"
+        );
+
+    const icon =
+        document.getElementById(
+            "gameIcon"
+        );
+
+    const title =
+        document.getElementById(
+            "gameTitle"
+        );
+
+    const text =
+        document.getElementById(
+            "gameText"
+        );
+
+
+    if (!modal) {
+
+        alert(
+            "Mines modal not found."
+        );
+
+        return;
+    }
+
+
+    if (icon) {
+
+        icon.textContent =
+            "💣";
+    }
+
+
+    if (title) {
+
+        title.textContent =
+            "Mines";
+    }
+
+
+    if (text) {
+
+        text.innerHTML = `
+
+            <div class="mines-game">
+
+                <div
+                    id="minesMessage"
+                    class="mines-message"
+                >
+                    Choose your demo bet and
+                    number of mines.
+                </div>
+
+
+                <div class="mines-settings">
+
+                    <div class="mines-setting">
+
+                        <label>
+                            Demo Bet
+                        </label>
+
+                        <select
+                            id="minesBet"
+                        >
+
+                            <option value="10">
+                                10 credits
+                            </option>
+
+                            <option value="50">
+                                50 credits
+                            </option>
+
+                            <option value="100">
+                                100 credits
+                            </option>
+
+                            <option value="500">
+                                500 credits
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="mines-setting">
+
+                        <label>
+                            Mines
+                        </label>
+
+                        <select
+                            id="minesCount"
+                        >
+
+                            <option value="3">
+                                3 mines
+                            </option>
+
+                            <option
+                                value="5"
+                                selected
+                            >
+                                5 mines
+                            </option>
+
+                            <option value="7">
+                                7 mines
+                            </option>
+
+                            <option value="10">
+                                10 mines
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="startMinesButton"
+                    onclick="startMines()"
+                    class="mines-start-button"
+                >
+                    💣 START MINES
+                </button>
+
+
+                <div
+                    id="minesTestResult"
+                    class="mines-test-result"
+                >
+                </div>
+
+            </div>
+
+        `;
+    }
+
+
+    modal.style.display =
+        "flex";
+}
+
+
+// ==========================================
+// START MINES GAME
+// ==========================================
+
+async function startMines() {
+
+    const betElement =
+        document.getElementById(
+            "minesBet"
+        );
+
+    const minesElement =
+        document.getElementById(
+            "minesCount"
+        );
+
+    const button =
+        document.getElementById(
+            "startMinesButton"
+        );
+
+    const message =
+        document.getElementById(
+            "minesMessage"
+        );
+
+    const result =
+        document.getElementById(
+            "minesTestResult"
+        );
+
+
+    if (
+        !betElement ||
+        !minesElement
+    ) {
+
+        return;
+    }
+
+
+    const bet =
+        Number(
+            betElement.value
+        );
+
+
+    const mineCount =
+        Number(
+            minesElement.value
+        );
+
+
+    // --------------------------------------
+    // BASIC FRONTEND CHECK
+    // --------------------------------------
+
+    if (bet <= 0) {
+
+        alert(
+            "Please select a valid demo bet."
+        );
+
+        return;
+    }
+
+
+    if (
+        mineCount < 1 ||
+        mineCount > 20
+    ) {
+
+        alert(
+            "Invalid mine count."
+        );
+
+        return;
+    }
+
+
+    // --------------------------------------
+    // TELEGRAM AUTH CHECK
+    // --------------------------------------
+
+    if (!tg.initData) {
+
+        alert(
+            "Telegram authentication data is unavailable."
+        );
+
+        return;
+    }
+
+
+    // --------------------------------------
+    // DISABLE BUTTON
+    // --------------------------------------
+
+    if (button) {
+
+        button.disabled =
+            true;
+
+        button.textContent =
+            "💣 STARTING...";
+    }
+
+
+    if (message) {
+
+        message.textContent =
+            "Creating your Mines game...";
+    }
+
+
+    if (result) {
+
+        result.textContent =
+            "";
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                `${API_URL}/api/game/mines/start`,
+                {
+
+                    method: "POST",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json"
+
+                    },
+
+                    body: JSON.stringify({
+
+                        initData:
+                            tg.initData,
+
+                        bet_amount:
+                            bet,
+
+                        mine_count:
+                            mineCount
+
+                    })
+
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        console.log(
+            "Mines start response:",
+            data
+        );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+
+                data.error ||
+                `HTTP ${response.status}`
+
+            );
+
+        }
+
+
+        if (!data.success) {
+
+            throw new Error(
+
+                data.error ||
+                "Could not start Mines."
+
+            );
+
+        }
+
+
+        // ----------------------------------
+        // SAVE GAME INFORMATION
+        // ----------------------------------
+
+        window.currentMinesGame = {
+
+            game_id:
+                data.game_id,
+
+            bet:
+                data.bet,
+
+            mine_count:
+                data.mine_count,
+
+            grid_size:
+                data.grid_size,
+
+            multiplier:
+                data.multiplier,
+
+            potential_win:
+                data.potential_win
+
+        };
+
+
+        // ----------------------------------
+        // UPDATE BALANCE
+        // ----------------------------------
+
+        balance =
+            Number(
+                data.balance
+            );
+
+
+        updateBalance();
+
+
+        // ----------------------------------
+        // DISPLAY SUCCESS
+        // ----------------------------------
+
+        if (message) {
+
+            message.innerHTML =
+
+                "✅ Mines game started!<br>" +
+
+                "Bet: " +
+                data.bet +
+                " credits<br>" +
+
+                "Mines: " +
+                data.mine_count;
+
+        }
+
+
+        if (result) {
+
+            result.innerHTML =
+
+                "Game ID: " +
+                data.game_id +
+                "<br>" +
+
+                "Balance: " +
+                Number(
+                    data.balance
+                ).toLocaleString() +
+                " credits<br><br>" +
+
+                "Server successfully created " +
+                "your hidden Mines board.";
+
+        }
+
+
+        console.log(
+            "Mines game created:",
+            window.currentMinesGame
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Mines start error:",
+            error
+        );
+
+
+        if (message) {
+
+            message.textContent =
+                error.message;
+
+        }
+
+
+    } finally {
+
+        if (button) {
+
+            button.disabled =
+                false;
+
+            button.textContent =
+                "💣 START MINES";
+
+        }
+
+    }
+            }
 
 
 // ==========================================
