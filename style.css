@@ -1,0 +1,1222 @@
+//style.css
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #0b0f19;
+    color: #ffffff;
+}
+
+button {
+    font-family: inherit;
+}
+
+.app {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    min-height: 100vh;
+    padding-bottom: 90px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 18px 12px;
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.welcome {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+#username {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.profile-button {
+    width: 44px;
+    height: 44px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #1b2233;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   BALANCE
+========================= */
+
+.balance-card {
+    margin: 10px 16px 24px;
+
+    padding: 22px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #171e31,
+            #101522
+        );
+
+    border: 1px solid #252e43;
+}
+
+.balance-label {
+    font-size: 11px;
+    color: #8f9bb0;
+    letter-spacing: 1px;
+}
+
+.balance {
+    margin-top: 6px;
+
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.coin {
+    font-size: 24px;
+}
+
+.balance-button {
+    margin-top: 14px;
+
+    border: 0;
+    border-radius: 10px;
+
+    padding: 10px 14px;
+
+    background: #27324a;
+    color: white;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+    padding: 0 18px 12px;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   GAME GRID
+========================= */
+
+.games {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    padding: 0 16px;
+}
+
+.game-card {
+    min-height: 155px;
+
+    border: 1px solid #252e43;
+
+    border-radius: 18px;
+
+    text-align: left;
+
+    padding: 18px;
+
+    color: white;
+
+    background: #141a28;
+
+    transition: transform 0.15s;
+}
+
+.game-card:active {
+    transform: scale(0.96);
+}
+
+.game-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.game-name {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.game-description {
+    margin-top: 5px;
+
+    font-size: 12px;
+
+    color: #8f9bb0;
+}
+
+
+/* =========================
+   DIFFERENT GAME CARDS
+========================= */
+
+.slots {
+    background:
+        linear-gradient(
+            145deg,
+            #26152c,
+            #151622
+        );
+}
+
+.mines {
+    background:
+        linear-gradient(
+            145deg,
+            #292016,
+            #151622
+        );
+}
+
+.keno {
+    background:
+        linear-gradient(
+            145deg,
+            #14282b,
+            #151622
+        );
+}
+
+.bingo {
+    background:
+        linear-gradient(
+            145deg,
+            #21172e,
+            #151622
+        );
+}
+
+.wheel {
+    background:
+        linear-gradient(
+            145deg,
+            #2a2114,
+            #151622
+        );
+}
+
+.aviator {
+    background:
+        linear-gradient(
+            145deg,
+            #142436,
+            #151622
+        );
+}
+
+
+/* =========================
+   BOTTOM NAV
+========================= */
+
+.bottom-nav {
+    position: fixed;
+
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+    max-width: 600px;
+
+    height: 70px;
+
+    display: flex;
+
+    justify-content: space-around;
+    align-items: center;
+
+    background: #111725;
+
+    border-top: 1px solid #252e43;
+
+    z-index: 100;
+}
+
+.nav-button {
+    border: 0;
+    background: transparent;
+
+    color: #7f8ba1;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 4px;
+
+    padding: 8px 18px;
+}
+
+.nav-button span {
+    font-size: 20px;
+}
+
+.nav-button small {
+    font-size: 10px;
+}
+
+.nav-button.active {
+    color: white;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(
+        0,
+        0,
+        0,
+        0.75
+    );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 200;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 400px;
+
+    background: #151b2a;
+
+    border: 1px solid #29334a;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    width: 35px;
+    height: 35px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #252e43;
+    color: white;
+}
+
+.modal-icon {
+    font-size: 60px;
+
+    margin-bottom: 12px;
+}
+
+.modal-content h2 {
+    font-size: 25px;
+}
+
+.modal-content p {
+    color: #929db1;
+
+    margin: 10px 0 25px;
+}
+
+.play-button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 0;
+    border-radius: 12px;
+
+    background: #ffffff;
+    color: #111827;
+
+    font-size: 16px;
+    font-weight: 800;
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 360px) {
+
+    .games {
+        gap: 8px;
+        padding: 0 10px;
+    }
+
+    .game-card {
+        padding: 14px;
+        min-height: 140px;
+    }
+
+    .game-icon {
+        font-size: 32px;
+    }
+
+}
+/* =====================================================
+   GAME UI PRO PACK - SLOTS + MINES
+   ===================================================== */
+
+.modal-content {
+    width: min(94vw, 520px);
+    max-height: 92vh;
+    overflow-y: auto;
+    border-radius: 28px;
+    padding: 22px;
+    background: linear-gradient(180deg, #121a2b 0%, #0b1020 100%);
+    border: 1px solid rgba(255,255,255,.08);
+    box-shadow: 0 24px 80px rgba(0,0,0,.55);
+}
+
+#gameTitle {
+    font-size: 24px;
+    letter-spacing: .5px;
+}
+
+#gameText {
+    margin-top: 8px;
+}
+
+.slots-game,
+.mines-game {
+    width: 100%;
+    color: #fff;
+}
+
+.slots-topline,
+.mines-kicker {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: #8f9bb0;
+}
+
+.slots-topline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-bottom: 12px;
+}
+
+.slots-live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #35e69a;
+    box-shadow: 0 0 10px rgba(53,230,154,.8);
+}
+
+.slots-machine {
+    position: relative;
+    padding: 18px 14px 20px;
+    border-radius: 24px;
+    background: linear-gradient(145deg, #263454, #101729 65%, #090e1a);
+    border: 1px solid rgba(255,255,255,.1);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 16px 35px rgba(0,0,0,.35);
+    overflow: hidden;
+}
+
+.slots-machine:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(115,150,255,.18), transparent 45%);
+    pointer-events: none;
+}
+
+.slots-machine-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 12px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #aab8d8;
+}
+
+.slots-jackpot {
+    color: #f7cf67;
+    font-size: 10px;
+}
+
+.slots-reels {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 9px;
+    padding: 10px;
+    border-radius: 18px;
+    background: #080d18;
+    border: 1px solid rgba(255,255,255,.08);
+    box-shadow: inset 0 7px 18px rgba(0,0,0,.4);
+}
+
+.slot-symbol {
+    min-width: 0;
+    aspect-ratio: 1 / 1.12;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #f5f7fb, #cfd5e2);
+    color: #172033;
+    font-size: clamp(42px, 13vw, 64px);
+    line-height: 1;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,.9), inset 0 -7px 14px rgba(0,0,0,.15);
+    overflow: hidden;
+}
+
+.slots-payline {
+    position: relative;
+    z-index: 2;
+    height: 2px;
+    margin: -1px 6px -1px;
+    background: rgba(255,215,92,.9);
+    box-shadow: 0 0 12px rgba(255,215,92,.65);
+}
+
+.slots-payline.bottom {
+    margin: -1px 6px 0;
+}
+
+.slots-balance-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 13px 0;
+}
+
+.slots-balance-row > div,
+.mines-stats > div,
+.mines-risk-card > div {
+    padding: 11px 12px;
+    border-radius: 14px;
+    background: rgba(255,255,255,.045);
+    border: 1px solid rgba(255,255,255,.06);
+}
+
+.slots-balance-row span,
+.mines-stats span,
+.mines-risk-card span {
+    display: block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    color: #7f8aa2;
+    margin-bottom: 4px;
+}
+
+.slots-balance-row strong,
+.mines-stats strong,
+.mines-risk-card strong {
+    font-size: 15px;
+}
+
+.slots-message,
+.mines-message {
+    min-height: 42px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    margin: 10px 0;
+    padding: 10px 12px;
+    border-radius: 14px;
+    background: rgba(87,112,180,.1);
+    color: #c8d3ea;
+    font-size: 13px;
+    line-height: 1.35;
+}
+
+.slots-control-card {
+    margin-top: 12px;
+    padding: 14px;
+    border-radius: 18px;
+    background: rgba(255,255,255,.035);
+    border: 1px solid rgba(255,255,255,.07);
+}
+
+.slots-control-label {
+    text-align: center;
+    color: #7f8aa2;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.slots-bet-picker {
+    display: grid;
+    grid-template-columns: 48px 1fr 48px;
+    align-items: center;
+    gap: 8px;
+}
+
+.slots-adjust {
+    height: 44px;
+    border: 0;
+    border-radius: 13px;
+    background: #202b45;
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.slots-current-bet {
+    text-align: center;
+}
+
+.slots-current-bet strong {
+    font-size: 24px;
+}
+
+.slots-current-bet small {
+    margin-left: 5px;
+    color: #8f9bb0;
+}
+
+.slots-bets {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 7px;
+    margin-top: 10px;
+}
+
+.slot-bet {
+    min-height: 38px;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 11px;
+    background: #161f34;
+    color: #aeb9cf;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.slot-bet.active {
+    background: #2a6df4;
+    border-color: #5c91ff;
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(42,109,244,.25);
+}
+
+.slots-spin-button,
+.mines-start-button,
+.mines-cashout-button,
+.mines-new-game-button {
+    width: 100%;
+    min-height: 52px;
+    margin-top: 12px;
+    border: 0;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: .4px;
+    cursor: pointer;
+    transition: transform .15s ease, opacity .15s ease, filter .15s ease;
+}
+
+.slots-spin-button {
+    background: linear-gradient(135deg, #3478ff, #1e55d7);
+    color: #fff;
+    box-shadow: 0 10px 26px rgba(39,103,239,.3);
+}
+
+.slots-spin-button:active,
+.mines-start-button:active,
+.mines-cashout-button:active,
+.mines-new-game-button:active {
+    transform: scale(.98);
+}
+
+.slots-hint {
+    margin-top: 9px;
+    text-align: center;
+    color: #6f7b92;
+    font-size: 10px;
+}
+
+.mines-hero,
+.mines-board-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 19px;
+    background: linear-gradient(135deg, rgba(55,82,142,.35), rgba(19,28,48,.55));
+    border: 1px solid rgba(255,255,255,.07);
+}
+
+.mines-hero {
+    justify-content: flex-start;
+}
+
+.mines-bomb {
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
+    display: grid;
+    place-items: center;
+    border-radius: 17px;
+    background: #111b31;
+    font-size: 31px;
+}
+
+.mines-game h3 {
+    margin: 2px 0 3px;
+    font-size: 23px;
+    letter-spacing: 1px;
+}
+
+.mines-hero p {
+    color: #8f9bb0;
+    font-size: 12px;
+}
+
+.mines-settings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.mines-setting label {
+    display: block;
+    margin: 0 0 6px 2px;
+    color: #7f8aa2;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1.3px;
+}
+
+.mines-setting select {
+    width: 100%;
+    height: 46px;
+    padding: 0 12px;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 13px;
+    background: #151f35;
+    color: #fff;
+    outline: none;
+}
+
+.mines-risk-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.mines-risk-card strong {
+    font-size: 13px;
+}
+
+.mines-start-button {
+    background: linear-gradient(135deg, #2c83ff, #1554dc);
+    color: #fff;
+    box-shadow: 0 10px 26px rgba(39,103,239,.28);
+}
+
+.mines-board-header {
+    margin-bottom: 12px;
+}
+
+.mines-live-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: rgba(53,230,154,.09);
+    color: #54e9a8;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.mines-live-pill.ended {
+    background: rgba(255,255,255,.06);
+    color: #8995ab;
+}
+
+.mines-live-pill span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.mines-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.mines-grid-shell {
+    padding: 12px;
+    border-radius: 21px;
+    background: linear-gradient(145deg, #18243e, #0c1425);
+    border: 1px solid rgba(255,255,255,.08);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 12px 30px rgba(0,0,0,.25);
+}
+
+.mines-grid-title {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2px 9px;
+    color: #71809a;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+}
+
+.mines-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 7px;
+    width: 100%;
+}
+
+.mines-tile {
+    position: relative;
+    aspect-ratio: 1;
+    padding: 0;
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #26385d, #182542);
+    color: #7186aa;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,.06), 0 4px 10px rgba(0,0,0,.22);
+    cursor: pointer;
+    transition: transform .12s ease, filter .12s ease, background .12s ease;
+}
+
+.mines-tile span {
+    opacity: .45;
+    font-size: 15px;
+}
+
+.mines-tile:not(:disabled):hover {
+    transform: translateY(-2px);
+    filter: brightness(1.18);
+}
+
+.mines-tile:disabled {
+    cursor: default;
+}
+
+.mines-tile.is-safe {
+    background: linear-gradient(145deg, #1b6d61, #124b46);
+    color: #66f3cb;
+    box-shadow: 0 0 0 1px rgba(67,241,196,.18), 0 8px 18px rgba(14,92,79,.25);
+}
+
+.mines-tile.is-mine {
+    background: linear-gradient(145deg, #7b3041, #4b1e2a);
+    color: #ff7f96;
+    box-shadow: 0 0 0 1px rgba(255,93,122,.2), 0 8px 18px rgba(105,30,47,.25);
+}
+
+.mines-cashout-button {
+    background: linear-gradient(135deg, #16b982, #087e5d);
+    color: #fff;
+    box-shadow: 0 9px 24px rgba(15,169,119,.24);
+}
+
+.mines-cashout-button span {
+    opacity: .8;
+    margin-left: 5px;
+}
+
+.mines-new-game-button {
+    background: #1b2740;
+    border: 1px solid rgba(255,255,255,.08);
+    color: #fff;
+}
+
+.mines-new-game-button.is-disabled,
+.mines-new-game-button:disabled,
+.slots-spin-button:disabled,
+.mines-start-button:disabled,
+.mines-cashout-button:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+    filter: grayscale(.35);
+}
+
+.mines-actions {
+    display: grid;
+    gap: 8px;
+}
+
+.mines-status {
+    margin-top: 9px;
+    text-align: center;
+    color: #69768e;
+    font-size: 10px;
+}
+
+.mines-test-result {
+    color: #6f7b92;
+    font-size: 10px;
+}
+
+@keyframes slotsPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.035); }
+}
+
+.slots-spin-button:not(:disabled) {
+    animation: slotsPulse 2.2s ease-in-out infinite;
+}
+
+@media (max-width: 390px) {
+    .modal-content { padding: 16px; border-radius: 23px; }
+    .slot-symbol { font-size: 36px; }
+    .mines-grid { gap: 5px; }
+    .mines-tile { border-radius: 9px; }
+    .mines-stats strong { font-size: 12px; }
+}
+
+/* =====================================================
+   GAME UI PRO PACK - SLOTS + MINES
+   ===================================================== */
+.modal-content{width:min(94vw,520px);max-height:92vh;overflow-y:auto;border-radius:28px;padding:22px;background:linear-gradient(180deg,#121a2b 0%,#0b1020 100%);border:1px solid rgba(255,255,255,.08);box-shadow:0 24px 80px rgba(0,0,0,.55)}
+#gameTitle{font-size:24px;letter-spacing:.5px}#gameText{margin-top:8px}.slots-game,.mines-game{width:100%;color:#fff}.slots-topline,.mines-kicker{font-size:10px;font-weight:800;letter-spacing:1.8px;color:#8f9bb0}.slots-topline{display:flex;align-items:center;justify-content:center;gap:7px;margin-bottom:12px}.slots-live-dot{width:7px;height:7px;border-radius:50%;background:#35e69a;box-shadow:0 0 10px rgba(53,230,154,.8)}
+.slots-machine{position:relative;padding:18px 14px 20px;border-radius:24px;background:linear-gradient(145deg,#263454,#101729 65%,#090e1a);border:1px solid rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 16px 35px rgba(0,0,0,.35);overflow:hidden}.slots-machine:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(115,150,255,.18),transparent 45%);pointer-events:none}.slots-machine-header{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;margin-bottom:12px;font-size:11px;font-weight:900;letter-spacing:2px;color:#aab8d8}.slots-jackpot{color:#f7cf67;font-size:10px}.slots-reels{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:9px;padding:10px;border-radius:18px;background:#080d18;border:1px solid rgba(255,255,255,.08);box-shadow:inset 0 7px 18px rgba(0,0,0,.4)}.slot-symbol{min-width:0;aspect-ratio:1/1.12;display:grid;place-items:center;border-radius:14px;background:linear-gradient(180deg,#f5f7fb,#cfd5e2);color:#172033;font-size:clamp(42px,13vw,64px);line-height:1;box-shadow:inset 0 2px 0 rgba(255,255,255,.9),inset 0 -7px 14px rgba(0,0,0,.15);overflow:hidden}.slots-payline{position:relative;z-index:2;height:2px;margin:-1px 6px;background:rgba(255,215,92,.9);box-shadow:0 0 12px rgba(255,215,92,.65)}.slots-payline.bottom{margin:-1px 6px 0}.slots-balance-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:13px 0}.slots-balance-row>div,.mines-stats>div,.mines-risk-card>div{padding:11px 12px;border-radius:14px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.06)}.slots-balance-row span,.mines-stats span,.mines-risk-card span{display:block;font-size:9px;font-weight:800;letter-spacing:1.2px;color:#7f8aa2;margin-bottom:4px}.slots-balance-row strong,.mines-stats strong,.mines-risk-card strong{font-size:15px}.slots-message,.mines-message{min-height:42px;display:grid;place-items:center;text-align:center;margin:10px 0;padding:10px 12px;border-radius:14px;background:rgba(87,112,180,.1);color:#c8d3ea;font-size:13px;line-height:1.35}.slots-control-card{margin-top:12px;padding:14px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07)}.slots-control-label{text-align:center;color:#7f8aa2;font-size:9px;font-weight:900;letter-spacing:1.5px;margin-bottom:8px}.slots-bet-picker{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px}.slots-adjust{height:44px;border:0;border-radius:13px;background:#202b45;color:#fff;font-size:25px;cursor:pointer}.slots-current-bet{text-align:center}.slots-current-bet strong{font-size:24px}.slots-current-bet small{margin-left:5px;color:#8f9bb0}.slots-bets{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:10px}.slot-bet{min-height:38px;border:1px solid rgba(255,255,255,.08);border-radius:11px;background:#161f34;color:#aeb9cf;font-weight:800;cursor:pointer}.slot-bet.active{background:#2a6df4;border-color:#5c91ff;color:#fff;box-shadow:0 6px 18px rgba(42,109,244,.25)}
+.slots-spin-button,.mines-start-button,.mines-cashout-button,.mines-new-game-button{width:100%;min-height:52px;margin-top:12px;border:0;border-radius:15px;font-size:15px;font-weight:900;letter-spacing:.4px;cursor:pointer;transition:transform .15s ease,opacity .15s ease,filter .15s ease}.slots-spin-button{background:linear-gradient(135deg,#3478ff,#1e55d7);color:#fff;box-shadow:0 10px 26px rgba(39,103,239,.3)}.slots-spin-button:active,.mines-start-button:active,.mines-cashout-button:active,.mines-new-game-button:active{transform:scale(.98)}.slots-hint{margin-top:9px;text-align:center;color:#6f7b92;font-size:10px}.mines-hero,.mines-board-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px;border-radius:19px;background:linear-gradient(135deg,rgba(55,82,142,.35),rgba(19,28,48,.55));border:1px solid rgba(255,255,255,.07)}.mines-hero{justify-content:flex-start}.mines-bomb{width:58px;height:58px;flex:0 0 58px;display:grid;place-items:center;border-radius:17px;background:#111b31;font-size:31px}.mines-game h3{margin:2px 0 3px;font-size:23px;letter-spacing:1px}.mines-hero p{color:#8f9bb0;font-size:12px}.mines-settings{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.mines-setting label{display:block;margin:0 0 6px 2px;color:#7f8aa2;font-size:9px;font-weight:900;letter-spacing:1.3px}.mines-setting select{width:100%;height:46px;padding:0 12px;border:1px solid rgba(255,255,255,.08);border-radius:13px;background:#151f35;color:#fff;outline:none}.mines-risk-card{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.mines-risk-card strong{font-size:13px}.mines-start-button{background:linear-gradient(135deg,#2c83ff,#1554dc);color:#fff;box-shadow:0 10px 26px rgba(39,103,239,.28)}.mines-board-header{margin-bottom:12px}.mines-live-pill{display:flex;align-items:center;gap:6px;padding:7px 10px;border-radius:999px;background:rgba(53,230,154,.09);color:#54e9a8;font-size:9px;font-weight:900;letter-spacing:1px}.mines-live-pill.ended{background:rgba(255,255,255,.06);color:#8995ab}.mines-live-pill span{width:6px;height:6px;border-radius:50%;background:currentColor}.mines-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}.mines-grid-shell{padding:12px;border-radius:21px;background:linear-gradient(145deg,#18243e,#0c1425);border:1px solid rgba(255,255,255,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 12px 30px rgba(0,0,0,.25)}.mines-grid-title{display:flex;justify-content:space-between;margin:0 2px 9px;color:#71809a;font-size:8px;font-weight:900;letter-spacing:1.2px}.mines-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;width:100%}.mines-tile{position:relative;aspect-ratio:1;padding:0;border:0;border-radius:12px;background:linear-gradient(145deg,#26385d,#182542);color:#7186aa;box-shadow:inset 0 2px 0 rgba(255,255,255,.06),0 4px 10px rgba(0,0,0,.22);cursor:pointer;transition:transform .12s ease,filter .12s ease,background .12s ease}.mines-tile span{opacity:.45;font-size:15px}.mines-tile:not(:disabled):hover{transform:translateY(-2px);filter:brightness(1.18)}.mines-tile:disabled{cursor:default}.mines-tile.is-safe{background:linear-gradient(145deg,#1b6d61,#124b46);color:#66f3cb;box-shadow:0 0 0 1px rgba(67,241,196,.18),0 8px 18px rgba(14,92,79,.25)}.mines-tile.is-mine{background:linear-gradient(145deg,#7b3041,#4b1e2a);color:#ff7f96;box-shadow:0 0 0 1px rgba(255,93,122,.2),0 8px 18px rgba(105,30,47,.25)}.mines-cashout-button{background:linear-gradient(135deg,#16b982,#087e5d);color:#fff;box-shadow:0 9px 24px rgba(15,169,119,.24)}.mines-cashout-button span{opacity:.8;margin-left:5px}.mines-new-game-button{background:#1b2740;border:1px solid rgba(255,255,255,.08);color:#fff}.mines-new-game-button.is-disabled,.mines-new-game-button:disabled,.slots-spin-button:disabled,.mines-start-button:disabled,.mines-cashout-button:disabled{opacity:.45;cursor:not-allowed;filter:grayscale(.35)}.mines-actions{display:grid;gap:8px}.mines-status{margin-top:9px;text-align:center;color:#69768e;font-size:10px}.mines-test-result{color:#6f7b92;font-size:10px}@keyframes slotsPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}.slots-spin-button:not(:disabled){animation:slotsPulse 2.2s ease-in-out infinite}@media(max-width:390px){.modal-content{padding:16px;border-radius:23px}.slot-symbol{font-size:36px}.mines-grid{gap:5px}.mines-tile{border-radius:9px}.mines-stats strong{font-size:12px}}
+
+/* =====================================================
+   MINES QUICK REPLAY / WALLET UPGRADE
+   ===================================================== */
+
+.mines-wallet-card {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    margin-top:12px;
+    padding:14px 16px;
+    border-radius:18px;
+    background:linear-gradient(135deg,rgba(39,110,255,.16),rgba(255,255,255,.035));
+    border:1px solid rgba(92,145,255,.18);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+.mines-wallet-card span {
+    display:block;
+    color:#7f8aa2;
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:1.3px;
+    margin-bottom:4px;
+}
+
+.mines-wallet-card strong {
+    font-size:22px;
+    letter-spacing:.2px;
+}
+
+.mines-wallet-icon {
+    width:42px;
+    height:42px;
+    display:grid;
+    place-items:center;
+    border-radius:13px;
+    background:rgba(255,255,255,.06);
+    font-size:20px;
+}
+
+.mines-wallet-meta {
+    text-align:right;
+}
+
+.mines-wallet-meta small {
+    display:block;
+    color:#7f8aa2;
+    font-size:8px;
+    font-weight:900;
+    letter-spacing:1.1px;
+    margin-bottom:3px;
+}
+
+.mines-wallet-meta b {
+    font-size:13px;
+}
+
+.mines-control-card {
+    margin-top:12px;
+    padding:14px;
+    border-radius:18px;
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.mines-control-title {
+    text-align:center;
+    color:#7f8aa2;
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:1.5px;
+    margin-bottom:8px;
+}
+
+.mines-bet-picker {
+    display:grid;
+    grid-template-columns:48px 1fr 48px;
+    align-items:center;
+    gap:8px;
+}
+
+.mines-adjust {
+    height:44px;
+    border:0;
+    border-radius:13px;
+    background:#202b45;
+    color:#fff;
+    font-size:25px;
+    cursor:pointer;
+    transition:transform .12s ease,filter .12s ease;
+}
+
+.mines-adjust:active {
+    transform:scale(.96);
+}
+
+.mines-adjust.small {
+    height:42px;
+    font-size:22px;
+}
+
+.mines-current-bet {
+    text-align:center;
+}
+
+.mines-current-bet strong {
+    font-size:24px;
+}
+
+.mines-current-bet small {
+    margin-left:5px;
+    color:#8f9bb0;
+}
+
+.mines-quick-bets {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:7px;
+    margin-top:10px;
+}
+
+.mines-quick-bet {
+    min-height:38px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:11px;
+    background:#161f34;
+    color:#aeb9cf;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.mines-quick-bet.active {
+    background:#2a6df4;
+    border-color:#5c91ff;
+    color:#fff;
+    box-shadow:0 6px 18px rgba(42,109,244,.25);
+}
+
+.mines-grid-fixed {
+    width:100%;
+    height:46px;
+    display:grid;
+    place-items:center;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:13px;
+    background:#151f35;
+    color:#fff;
+    font-weight:800;
+}
+
+.mines-replay-card {
+    margin-top:12px;
+    padding:14px;
+    border-radius:18px;
+    background:linear-gradient(145deg,rgba(42,109,244,.12),rgba(255,255,255,.035));
+    border:1px solid rgba(92,145,255,.16);
+}
+
+.mines-replay-heading {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+.mines-replay-heading span,
+.mines-replay-copy span {
+    display:block;
+    color:#7f8aa2;
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:1.4px;
+    margin-bottom:4px;
+}
+
+.mines-replay-heading strong,
+.mines-replay-copy strong {
+    font-size:17px;
+}
+
+.mines-replay-heading small {
+    color:#69768e;
+    font-size:10px;
+    text-align:right;
+}
+
+.mines-replay-controls {
+    display:grid;
+    grid-template-columns:44px 1fr 44px;
+    align-items:center;
+    gap:7px;
+}
+
+.mines-replay-button {
+    min-height:44px;
+    border:0;
+    border-radius:13px;
+    background:linear-gradient(135deg,#3478ff,#1e55d7);
+    color:#fff;
+    font-size:14px;
+    font-weight:900;
+    box-shadow:0 9px 22px rgba(39,103,239,.25);
+}
+
+.mines-replay-card .mines-quick-bets {
+    margin-top:9px;
+}
+
+.mines-result-card {
+    padding:20px 16px;
+    text-align:center;
+    border-radius:21px;
+    border:1px solid rgba(255,255,255,.08);
+    background:linear-gradient(145deg,#18243e,#0d1425);
+}
+
+.mines-result-card.mine {
+    background:linear-gradient(145deg,rgba(123,48,65,.3),#101827);
+}
+
+.mines-result-card.won,
+.mines-result-card.cashed_out {
+    background:linear-gradient(145deg,rgba(22,185,130,.16),#101827);
+}
+
+.mines-result-icon {
+    width:54px;
+    height:54px;
+    margin:0 auto 9px;
+    display:grid;
+    place-items:center;
+    border-radius:17px;
+    background:rgba(255,255,255,.06);
+    font-size:27px;
+}
+
+.mines-result-card h3 {
+    margin:3px 0 5px;
+}
+
+.mines-result-card p {
+    margin:0;
+    color:#8f9bb0;
+    font-size:11px;
+    line-height:1.45;
+}
+
+.mines-finished .mines-message {
+    margin-bottom:0;
+}
+
+@media (max-width:390px) {
+    .mines-wallet-card strong { font-size:19px; }
+    .mines-replay-heading small { max-width:90px; }
+}
